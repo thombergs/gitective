@@ -132,7 +132,7 @@ public abstract class TreeUtils {
 		try {
 			return withParents(reader, walk, walk.parseCommit(commitId));
 		} catch (IOException e) {
-			walk.release();
+			walk.close();
 			throw new GitException(e, repository);
 		}
 	}
@@ -162,7 +162,7 @@ public abstract class TreeUtils {
 		try {
 			return withParents(reader, walk, walk.parseCommit(commit));
 		} catch (IOException e) {
-			walk.release();
+			walk.close();
 			throw new GitException(e, repository);
 		}
 	}
@@ -423,7 +423,7 @@ public abstract class TreeUtils {
 		} catch (IOException e) {
 			throw new GitException(e, repository);
 		} finally {
-			walk.release();
+			walk.close();
 		}
 		return true;
 	}

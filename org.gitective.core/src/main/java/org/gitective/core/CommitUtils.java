@@ -219,7 +219,7 @@ public abstract class CommitUtils {
 		} catch (IOException e) {
 			throw new GitException(e, repository);
 		} finally {
-			walk.release();
+			walk.close();
 		}
 		return commits;
 	}
@@ -244,7 +244,7 @@ public abstract class CommitUtils {
 		} catch (IOException e) {
 			throw new GitException(e, repository);
 		} finally {
-			walk.release();
+			walk.close();
 		}
 		return commits;
 	}
@@ -267,7 +267,7 @@ public abstract class CommitUtils {
 		} catch (IOException e) {
 			throw new GitException(e, repository);
 		} finally {
-			walk.release();
+			walk.close();
 		}
 	}
 
@@ -329,7 +329,7 @@ public abstract class CommitUtils {
 		} catch (IOException e) {
 			throw new GitException(e, repository);
 		} finally {
-			walk.release();
+			walk.close();
 		}
 	}
 
@@ -349,7 +349,7 @@ public abstract class CommitUtils {
 		} catch (IOException e) {
 			throw new GitException(e, repository);
 		} finally {
-			walk.release();
+			walk.close();
 		}
 	}
 
@@ -419,7 +419,7 @@ public abstract class CommitUtils {
 		} catch (IOException e) {
 			throw new GitException(e, repository);
 		} finally {
-			walk.release();
+			walk.close();
 		}
 	}
 }

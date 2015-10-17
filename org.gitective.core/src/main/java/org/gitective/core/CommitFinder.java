@@ -179,7 +179,7 @@ public class CommitFinder extends RepositoryService {
 		} catch (IOException e) {
 			throw new GitException(e, repository);
 		} finally {
-			walk.release();
+			walk.close();
 		}
 		return this;
 	}
@@ -236,7 +236,7 @@ public class CommitFinder extends RepositoryService {
 			} catch (IOException e) {
 				throw new GitException(e, repo);
 			} finally {
-				walk.release();
+				walk.close();
 			}
 		}
 		return this;
@@ -266,7 +266,7 @@ public class CommitFinder extends RepositoryService {
 			} catch (IOException e) {
 				throw new GitException(e, repo);
 			} finally {
-				walk.release();
+				walk.close();
 			}
 		}
 		return this;
